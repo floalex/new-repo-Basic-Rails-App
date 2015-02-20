@@ -3,21 +3,8 @@
 <div class="row">
   <div class="col-md-8">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-<<<<<<< HEAD
-  <div class="form-group">
-    <%= f.label :email %>
-    <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: "Enter email" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :password %>
-    <%= f.password_field :password, class: 'form-control', placeholder: "Enter password" %>
-  </div>
-=======
-
-
-    <%= devise_error_messages! %>
-
+<%= devise_error_messages! %>
+    
   <div class="form-group">
     <%= f.label :email %>
     <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: "Enter email" %>
@@ -28,17 +15,9 @@
     <%= f.password_field :password, class: 'form-control', placeholder: "Enter password" %>
   </div>
 
-  <div class="form-group">
-    <%= f.label :email %>
-    <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: "Enter email" %>
-  </div>
 
-  <div class="form-group">
-    <%= f.label :password %>
-    <%= f.password_field :password, class: 'form-control', placeholder: "Enter password" %>
-  </div>
 
->>>>>>> finish-devise
+
   <div class="form-group">
   <% if devise_mapping.rememberable? %>
       <%= f.label :remember_me, class: 'checkbox' do %>
@@ -51,13 +30,8 @@
   <div class="form-group">
     <%= render "devise/shared/links" %>
   </div>
-<<<<<<< HEAD
+
 <% end %>
-=======
- <% end %>
 
-
-
->>>>>>> finish-devise
 </div>
 </div>
