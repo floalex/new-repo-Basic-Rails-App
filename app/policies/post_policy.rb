@@ -10,7 +10,7 @@ class PostPolicy < ApplicationPolicy
   end
 
   def update?
-    user.admin? or not post.published?
+    user.admin? || user.moderator? or not post.published?
   end
   
   def index?

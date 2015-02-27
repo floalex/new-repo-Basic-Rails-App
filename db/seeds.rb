@@ -20,7 +20,8 @@ require 'faker'
    )
  end
  topics = Topic.all
- 
+
+
  # Note: by calling `User.new` instead of `create`,
  # we create an instance of User which isn't immediately saved to the database.
  
@@ -51,10 +52,10 @@ require 'faker'
 
  # Create an admin User
  admin = User.new(
-   name:  'Admin User',
-   email: 'flo.liang@my.com',
+   name:     'Admin User',
+   email:    'admin@example.com',
    password: 'helloworld',
-   role: 'admin'
+   role:     'admin'
  )
  admin.skip_confirmation!
  admin.save!
