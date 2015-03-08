@@ -53,7 +53,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
 gem 'fog-aws'
-
+gem 'will_paginate', '~> 3.0.5'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
