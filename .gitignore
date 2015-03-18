@@ -24,3 +24,5 @@ vendor/bundle/
 # Carrierwave image
 public/uploads
 
+# Ignore assets update
+public/assets

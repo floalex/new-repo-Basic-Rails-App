@@ -3,4 +3,9 @@
 
 require File.expand_path('../config/application', __FILE__)
 
+require 'rspec/core/rake_task'
+
+desc "Run all RSpec tests"
+RSpec::Core::RakeTask.new(:spec)
+
 Rails.application.load_tasks
