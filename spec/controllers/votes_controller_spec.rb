@@ -8,8 +8,8 @@ describe VotesController do
   before do
     request.env["HTTP_REFERER"] = '/'
     @user = authenticated_user
-      @post = associated_post
-      sign_in(:user, @user)
+    @post = associated_post
+    sign_in(:user, @user)
   end
 
   describe '#up_vote' do
