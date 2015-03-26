@@ -8,8 +8,8 @@ describe Comment do
 
 
   before do
-    @post = associated_post
     @user = authenticated_user
+    @post = associated_post
     @comment = Comment.new(body: 'My comment', post: @post, user_id: 10000)
   end
 
@@ -25,8 +25,7 @@ describe Comment do
   end
 
   it "does not send emails to users who haven't favorited the post" do
-    expect ( FavoriteMailer )
-      .not_to receive(:new_comment)
+    expect( FavoriteMailer ).not_to receive(:new_comment)
 
     @comment.save
   end
