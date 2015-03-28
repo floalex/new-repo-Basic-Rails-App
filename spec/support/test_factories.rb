@@ -16,5 +16,13 @@ module TestFactories
      user.skip_confirmation!
      user.save
      user
-   end
+ end
+
+ def comment_without_email(options={})
+    comment_options = {body: "A Comment"}.merge(options)
+    comment = Comment.new(comment_options)
+    allow(comment).to receive(:send_favorite_emails)
+    comment.save
+    comment
+ end
 end
