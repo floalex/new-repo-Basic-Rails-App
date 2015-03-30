@@ -2,6 +2,7 @@
   <div class="col-md-8">
        <%= render partial: 'votes/voter', locals: { post: @post } %>
        <h1>
+        <%= image_tag(@post.image.small.url) if @post.image? %>
         <%= markdown_to_html @post.title %>
        </h1>
        <small>
@@ -9,8 +10,7 @@
          submitted <%= time_ago_in_words(@post.created_at) %> ago by
          <%= @post.user.name %>
        </small>
-    <p><%= image_tag(@post.image.halfsize.url) if @post.image? %></p>
-    <p><%= markdown_to_html @post.body %></p>
+       <p><%= markdown_to_html @post.body %></p>
   </div>
  <div class="col-md-4">
   <% if policy(@post).edit? %>
@@ -37,7 +37,7 @@
 <div class="row">
   <h2>Comments</h2>
   <div class='col-md-12'>
-    <%= render @comments %>
+    <%= render partial: 'comments/comment', collection: @comments %>
     <%= render 'comments/form'%>
   </div>
 </div>
