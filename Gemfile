@@ -71,6 +71,7 @@ group :development, :test do
   gem 'rspec'
   gem 'rspec-rails', '~> 3.0'
   gem 'capybara'
+  gem 'newrelic_rpm'
   
 end
 
