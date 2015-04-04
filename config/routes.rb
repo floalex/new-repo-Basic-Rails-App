@@ -14,6 +14,9 @@ Rails.application.routes.draw do
       post '/down-vote' => 'votes#down_vote', as: :down_vote
   end
 
+  resources :advertisements, only: [:index, :show] do
+  end
+
   get 'about' => 'welcome#about'
 
   root to: 'welcome#index'

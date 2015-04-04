@@ -11,13 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150325023641) do
+ActiveRecord::Schema.define(version: 20150402034218) do
+
+  create_table "advertisements", force: :cascade do |t|
+    t.string   "title"
+    t.text     "copy"
+    t.integer  "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "comments", force: :cascade do |t|
     t.text     "body"
     t.integer  "post_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer  "user_id"
   end
 
@@ -27,8 +35,8 @@ ActiveRecord::Schema.define(version: 20150325023641) do
   create_table "favorites", force: :cascade do |t|
     t.integer  "post_id"
     t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_index "favorites", ["post_id"], name: "index_favorites_on_post_id"
@@ -37,8 +45,8 @@ ActiveRecord::Schema.define(version: 20150325023641) do
   create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.text     "body"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer  "user_id"
     t.integer  "topic_id"
     t.float    "rank"
@@ -52,8 +60,18 @@ ActiveRecord::Schema.define(version: 20150325023641) do
     t.string   "name"
     t.text     "description"
     t.integer  "post_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "summaries", ["post_id"], name: "index_summaries_on_post_id"
+
+  create_table "topics", force: :cascade do |t|
+    t.string   "name"
+    t.boolean  "public",      default: true
+    t.text     "description"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -86,8 +104,8 @@ ActiveRecord::Schema.define(version: 20150325023641) do
     t.integer  "value"
     t.integer  "user_id"
     t.integer  "post_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_index "votes", ["post_id"], name: "index_votes_on_post_id"
